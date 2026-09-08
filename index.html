@@ -14,12 +14,15 @@
   <style>
     .solution-actions{display:grid;grid-column:1/-1;grid-template-columns:1fr 1fr;gap:10px;margin-top:2px}.solution-button{min-height:44px;padding:0 16px;border:1px solid #d4e6fa;border-radius:12px;font:inherit;font-size:14px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s}.solution-button:hover{transform:translateY(-2px);box-shadow:0 9px 18px #1f75cb18}.written-solution{color:#1b6ec6;background:#f3f9ff}.video-solution{color:#8397ae;background:#f7f9fc;cursor:not-allowed}.video-solution.is-active{color:#fff;background:linear-gradient(108deg,#1489ff,#1266e9);box-shadow:0 10px 21px #1478ff45;cursor:pointer}.written-solution.is-disabled,.video-solution.is-disabled{color:#93a3b5;background:#f7f9fc;box-shadow:none;pointer-events:none}@media(max-width:480px){.solution-actions{grid-template-columns:1fr}.solution-button{min-height:48px}}
   </style>
+  <style>
+    .calendar-card{position:relative;margin-top:34px;padding:20px 22px 16px;border:1px solid #fff;border-radius:26px;background:linear-gradient(150deg,#edf6ff,#fff 48%,#fff6e4 135%);box-shadow:0 24px 60px #1455a01f;backdrop-filter:blur(18px)}.calendar-card:before{content:"";position:absolute;width:150px;height:150px;left:-52px;top:-58px;border-radius:50%;background:radial-gradient(circle,rgba(57,214,255,.28),transparent 68%);pointer-events:none}.cal-head{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-right:66px;margin-bottom:4px}.cal-eyebrow{margin:0 0 8px;color:#1879f6;font-size:10px;font-weight:800;letter-spacing:.22em}.cal-month{display:inline-block;margin:0;padding:6px 14px;border-radius:99px;color:#fff;background:linear-gradient(108deg,#2f8bff,#1266e9);font-size:15px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 18px #1478ff3d}.cal-nav{display:flex;gap:7px;padding-bottom:2px}.cal-nav button{width:32px;min-height:32px;padding:0 0 2px;border:1px solid #d4e6fa;border-radius:10px;color:#1b6ec6;background:#fff;font-size:18px;font-weight:800;line-height:1;cursor:pointer;transition:.2s transform,.2s box-shadow,.2s color,.2s background}.cal-nav button:hover:not(:disabled){color:#fff;background:linear-gradient(108deg,#1489ff,#1266e9);transform:translateY(-1px);box-shadow:0 8px 16px #1478ff40}.cal-nav button:disabled{opacity:.35;cursor:not-allowed}.cal-week{display:grid;grid-template-columns:repeat(7,1fr);margin:14px 0 4px;color:#7d93ad;font-size:11px;font-weight:800;text-align:center}.cal-grid{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:5px 2px;justify-items:center}.cal-grid span,.cal-grid button{position:relative;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:0;border:0;border-radius:13px;font:inherit;font-size:13px;font-weight:700}.cal-grid span{color:#bcc8d7}.cal-grid .today:after{content:"";position:absolute;left:50%;bottom:3px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#ffb63d}.cal-grid button.has{color:#fff;background:linear-gradient(135deg,#3ecfff,#1478ff);box-shadow:0 6px 14px #1478ff42;cursor:pointer;transition:.2s transform,.2s box-shadow}.cal-grid button.has:hover{transform:translateY(-2px);box-shadow:0 10px 20px #1478ff5c}.cal-grid .sel{box-shadow:0 0 0 2px #fff,0 0 0 4px #ffc94d}.cal-grid button.sel:hover{box-shadow:0 0 0 2px #fff,0 0 0 4px #ffc94d,0 10px 20px #1478ff5c}.cal-legend{display:flex;align-items:center;gap:7px;margin:13px 0 0;color:#8a98ab;font-size:11px}.cal-legend i{width:11px;height:11px;border-radius:4px}.cal-legend i.on{background:linear-gradient(135deg,#3ecfff,#1478ff)}.cal-legend i.off{background:#dde5ee;margin-left:9px}.cal-char{position:absolute;right:-8px;top:-30px;width:78px;height:78px;z-index:2;pointer-events:none}.cal-char img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 22%;border:3px solid #ffd98a;background:#fff;box-shadow:0 0 0 3px #fff,0 12px 22px #1455a033}.cal-char:before{content:"今天也要打卡哦！";position:absolute;right:70px;top:20px;white-space:nowrap;padding:6px 10px;border:1px solid #dbeafa;border-radius:12px 12px 3px 12px;color:#1b6ec6;background:#fff;font-size:11px;font-weight:800;box-shadow:0 8px 18px #1455a021}@media(max-width:780px){.calendar-card{margin-top:30px}}@media(max-width:480px){.calendar-card{margin-top:26px;padding:18px 14px 14px}.cal-head{padding-right:60px}.cal-month{font-size:13px;padding:5px 11px}.cal-grid span,.cal-grid button{width:34px;height:34px;font-size:12px}.cal-char{width:62px;height:62px;top:-22px;right:-4px}.cal-char:before{display:none}}
+  </style>
 </head>
 <body>
   <div class="shell">
     <nav><div class="brand"><img class="brand-logo" src="assets/lec-logo.png" alt="LEC Software League 标志"><span>LEC · DAILY</span></div><button class="admin-open" id="openEditor">出题组编辑</button><span class="nav-tag">LEC 招新 · 每日一题计划</span></nav>
     <main>
-      <section><div class="eyebrow">LEC DAILY PROBLEM</div><h1>把今天的<br><em>思考</em>写成代码</h1><p class="lead">每天两题，稳步积累。从读题、试错到实现，与 LEC 一起保持好奇，持续精进。</p><div class="date" id="dateLabel"></div></section>
+      <section><div class="eyebrow">LEC DAILY PROBLEM</div><h1>把今天的<br><em>思考</em>写成代码</h1><p class="lead">每天两题，稳步积累。从读题、试错到实现，与 LEC 一起保持好奇，持续精进。</p><div class="date" id="dateLabel"></div><aside class="calendar-card" aria-label="每日一题日历"><div class="cal-char"><img src="assets/lec-pixel-art.png" alt="LEC Q 版形象"></div><div class="cal-head"><div><p class="cal-eyebrow">LEC CALENDAR</p><p class="cal-month" id="calMonth"></p></div><div class="cal-nav"><button id="calPrev" type="button" aria-label="上一个月">‹</button><button id="calNext" type="button" aria-label="下一个月">›</button></div></div><div class="cal-week"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div><div class="cal-grid" id="calGrid"></div><p class="cal-legend"><i class="on"></i>已发布<i class="off"></i>未发布</p></aside></section>
       <section class="problem-card"><div class="card-top"><span class="daily">TODAY'S PROBLEMS</span><span class="level">每日一题</span></div><h2 id="problemTitle"></h2><p class="source" id="source"></p><div class="tags" id="tags"></div><p class="quote" id="description"></p><div class="actions"><a id="problemOne" class="button primary" target="_blank" rel="noopener">今日基础题 →</a><a id="problemTwo" class="button secondary" target="_blank" rel="noopener">今日进阶题 →</a><button class="secondary share" id="share">复制今日发送文案</button></div><p class="hint">分享链接会固定展示当天的两道题。</p></section>
     </main><footer class="footer"><span>LEC · Learn · Explore · Create</span><span>每天两题 · 不止两题</span></footer>
   </div><div id="toast" role="status"></div>
@@ -188,6 +191,33 @@
         toast(error.message||'提交失败；仓库未被修改');
       }
     };
+  </script>
+  <script>
+    (()=>{
+      const calGrid=document.getElementById('calGrid'),calMonth=document.getElementById('calMonth'),calPrev=document.getElementById('calPrev'),calNext=document.getElementById('calNext');
+      if(!calGrid)return;
+      const keys=Object.keys(problemDays).sort(),minMonth=keys[0].slice(0,7),maxMonth=keys[keys.length-1].slice(0,7);
+      let view=dateKey.slice(0,7);
+      const shiftMonth=step=>{let[y,m]=view.split('-').map(Number);m+=step;if(m<1){m=12;y--}if(m>12){m=1;y++}view=`${y}-${String(m).padStart(2,'0')}`;render()};
+      const render=()=>{
+        const[y,m]=view.split('-').map(Number);
+        calMonth.textContent=`${y} 年 ${m} 月`;
+        calPrev.disabled=view<=minMonth;
+        calNext.disabled=view>=maxMonth;
+        const first=new Date(y,m-1,1).getDay(),total=new Date(y,m,0).getDate(),today=fmt(new Date());
+        let html='';
+        for(let i=0;i<first;i++)html+='<i></i>';
+        for(let d=1;d<=total;d++){
+          const key=`${view}-${String(d).padStart(2,'0')}`,has=Boolean(problemDays[key]),cls=[has?'has':'',key===dateKey?'sel':'',key===today?'today':''].filter(Boolean).join(' ');
+          html+=has?`<button type="button" class="${cls}" data-date="${key}"${key===dateKey?' aria-current="date"':''} aria-label="${key} 已发布题目，点击查看">${d}</button>`:`<span class="${cls}" aria-label="${key} 未发布">${d}</span>`;
+        }
+        calGrid.innerHTML=html;
+      };
+      calGrid.addEventListener('click',event=>{const btn=event.target.closest('button[data-date]');if(btn)location.href=`${location.pathname}?date=${btn.dataset.date}`});
+      calPrev.addEventListener('click',()=>shiftMonth(-1));
+      calNext.addEventListener('click',()=>shiftMonth(1));
+      render();
+    })();
   </script>
 </body>
 </html>
