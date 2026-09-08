@@ -31,13 +31,13 @@
     // 上线后填入完整站点地址，例如：https://daily.lec-team.cn
     const SITE_URL = '';
     const problemDays = {
-      '2026-08-14': ['B2029','B2005'], '2026-08-15': ['B2061','P1150'], '2026-08-16': ['P5720','P1567'], '2026-08-17': ['P1085','B2064'],
-      '2026-08-18': ['P1152','P1428'], '2026-08-19': ['P5707','P5731'], '2026-08-20': ['P1011','B2107'], '2026-08-21': ['P1307','U329558'],
+      '2026-08-14': ['B2029','B2005','donghedd','https://kdocs.cn/l/cpndd30Woypu',''], '2026-08-15': ['B2061','P1150','donghedd','https://kdocs.cn/l/ckZZHuts0X4f',''], '2026-08-16': ['P5720','P1567','donghedd','https://kdocs.cn/l/csDdDT8GsAcJ',''], '2026-08-17': ['P1085','B2064','donghedd','https://www.kdocs.cn/l/cli9SZIaHq3r',''],
+      '2026-08-18': ['P1152','P1428','donghedd','https://www.kdocs.cn/l/ca0yGnCNNGUg',''], '2026-08-19': ['P5707','P5731','donghedd','https://www.kdocs.cn/l/ccqSUcS6Fp4b',''], '2026-08-20': ['P1011','B2107','donghedd','https://www.kdocs.cn/l/cvnnghZtec0W',''], '2026-08-21': ['P1307','U329558','donghedd','https://www.kdocs.cn/l/ck72oR3BqcPc',''],
       '2026-08-22': ["P2669","U323869","donghedd","https://www.kdocs.cn/l/ce8FTfOEHtF7","https://www.bilibili.com/video/BV1F48t6WEMd/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-08-23': ["P1014","U322984","donghedd","https://www.kdocs.cn/l/cj2qCksxNSqQ","https://www.bilibili.com/video/BV1648t6WEuD/?spm_id_from=333.1387.homepage.video_card.click"], '2026-08-24': ["U460960","U322553","donghedd","https://www.kdocs.cn/l/cvJPMPEP2M9Q","https://www.bilibili.com/video/BV1f88t6nEMp/?spm_id_from=333.1387.homepage.video_card.click"], '2026-08-25': ["P1739","P3397","donghedd","https://www.kdocs.cn/l/ccBjkxUGbsWj","https://www.bilibili.com/video/BV1FvhK6aE9L/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"],
       '2026-08-26': ["P1957","P1553","donghedd","https://www.kdocs.cn/l/cdCSJorfAdj3","https://www.bilibili.com/video/BV1vchL62E7U/?spm_id_from=333.1387.homepage.video_card.click&vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-08-27': ["P1003","U460484","donghedd","https://www.kdocs.cn/l/cgQTkvhpivca","https://www.bilibili.com/video/BV1EL896oErz/?spm_id_from=333.1387.homepage.video_card.click&vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-08-28': ["P5733","P1765","donghedd","https://www.kdocs.cn/l/ceIHLfs9ct9P","https://www.bilibili.com/video/BV1gvtu6EEtK/?spm_id_from=333.1387.collection.video_card.click&vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-08-29': ["P5705","P5734","donghedd","https://www.kdocs.cn/l/csSkbA5A8qg6","https://www.bilibili.com/video/BV1So8R6mErq/?spm_id_from=333.1387.homepage.video_card.click&vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"],
       '2026-08-30': ["P5015","P1321","donghedd","https://www.kdocs.cn/l/cblmSTRG7WkV","https://www.bilibili.com/video/BV1u74m6nEGy/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-08-31': ["P1914","P1308","donghedd","https://www.kdocs.cn/l/cvU0oak7aIuA","https://www.bilibili.com/video/BV1m6tn6CEDA/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-09-01': ["P1603","P1597","donghedd","https://www.kdocs.cn/l/ca3rCwvZaQrG","https://www.bilibili.com/video/BV1RKth62EcP/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"], '2026-09-02': ["P3741","P1200","donghedd","https://www.kdocs.cn/l/cnm1AAyjhIaJ","https://www.bilibili.com/video/BV1xCtn6rErU/?spm_id_from=333.1387.homepage.video_card.click&vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"],
-      '2026-09-03': ['P1217','P5736'],
-      '2026-09-07': ["P1051","P1101","donghemm"],
+      '2026-09-03': ['P1217','P5736','donghedd','',''],
+      '2026-09-07': ["P1051","P1101","donghemm","",""],
       '2026-09-06': ["P5744","B3628","小林","",""],
       '2026-09-04': ["P1614","P1403","汪美琳","","https://www.bilibili.com/video/BV12Ctn6rEgQ/?vd_source=9f3381c843dd3f5a48f9f2aa0dad9221"],
       '2026-09-05': ["P1046","P3817","if","",""],
@@ -59,28 +59,6 @@
   </script>
   <script>
     (()=>{
-      const writtenSolutionUrls={
-        '2026-08-14':'https://kdocs.cn/l/cpndd30Woypu',
-        '2026-08-15':'https://kdocs.cn/l/ckZZHuts0X4f',
-        '2026-08-16':'https://kdocs.cn/l/csDdDT8GsAcJ',
-        '2026-08-17':'https://www.kdocs.cn/l/cli9SZIaHq3r',
-        '2026-08-18':'https://www.kdocs.cn/l/ca0yGnCNNGUg',
-        '2026-08-19':'https://www.kdocs.cn/l/ccqSUcS6Fp4b',
-        '2026-08-20':'https://www.kdocs.cn/l/cvnnghZtec0W',
-        '2026-08-21':'https://www.kdocs.cn/l/ck72oR3BqcPc',
-        '2026-08-22':'https://www.kdocs.cn/l/ce8FTfOEHtF7',
-        '2026-08-23':'https://www.kdocs.cn/l/cj2qCksxNSqQ',
-        '2026-08-24':'https://www.kdocs.cn/l/cvJPMPEP2M9Q',
-        '2026-08-25':'https://www.kdocs.cn/l/ccBjkxUGbsWj',
-        '2026-08-26':'https://www.kdocs.cn/l/cdCSJorfAdj3',
-        '2026-08-27':'https://www.kdocs.cn/l/cgQTkvhpivca',
-        '2026-08-28':'https://www.kdocs.cn/l/ceIHLfs9ct9P',
-        '2026-08-29':'https://www.kdocs.cn/l/csSkbA5A8qg6',
-        '2026-08-30':'https://www.kdocs.cn/l/cblmSTRG7WkV',
-        '2026-08-31':'https://www.kdocs.cn/l/cvU0oak7aIuA',
-        '2026-09-01':'https://www.kdocs.cn/l/ca3rCwvZaQrG',
-        '2026-09-02':'https://www.kdocs.cn/l/cnm1AAyjhIaJ'
-      };
       const actionArea=document.querySelector('.actions');
       const shareButton=document.getElementById('share');
       if(!actionArea||!shareButton)return;
@@ -92,10 +70,9 @@
       const videoButton=solutionActions.querySelector('.video-solution');
       if(!pair){solutionActions.hidden=true;return}
       const [,,,writtenSolutionOverride='',videoSolutionOverride='']=pair;
-      const solutionUrl=writtenSolutionOverride||writtenSolutionUrls[dateKey];
+      const solutionUrl=writtenSolutionOverride;
       if(solutionUrl){writtenButton.href=solutionUrl}else{writtenButton.classList.add('is-disabled');writtenButton.textContent='文字题解 · 待更新';writtenButton.setAttribute('aria-disabled','true')}
       if(videoSolutionOverride){videoButton.href=videoSolutionOverride;videoButton.classList.add('is-active');videoButton.textContent='视频题解 ↗'}else{videoButton.classList.add('is-disabled');videoButton.setAttribute('aria-disabled','true')}
-      window.LEC_WRITTEN_SOLUTION_URLS=writtenSolutionUrls;
     })();
   </script>
   <script>
@@ -156,7 +133,7 @@
       editBasic.value=existing[0]?`https://www.luogu.com.cn/problem/${existing[0]}`:'';
       editAdvanced.value=existing[1]?`https://www.luogu.com.cn/problem/${existing[1]}`:'';
       editAuthor.value=existing[2]||'donghedd';
-      editWrittenSolution.value=existing[3]||window.LEC_WRITTEN_SOLUTION_URLS?.[editDate.value]||'';
+      editWrittenSolution.value=existing[3]||'';
       editVideoSolution.value=existing[4]||'';
       editorUpdate();
     };
